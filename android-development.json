@@ -1,0 +1,57 @@
+{
+    "type" : "plugin-catalog",
+    "version" : "1",
+    "name" : "android-development",
+    "displayName" : "Android Development",
+    "configurations" : [
+        {
+            "description" : "2.89 <= Jenkins < 2.107",
+            "prerequisites": {
+                "productVersion": "[2.89,2.107)" 
+            },
+            "includePlugins" : {
+                "android-emulator": {
+                    "version" : "3.0" 
+                },
+                "android-signing-plugin":{
+                    "version" : "2.2.4" 
+                },
+                "my-jenkins-plugin": {
+                    "url" : "https://nexus3.beescloud.com/repository/maven-releases/io/jenkins/plugins/my-jenkins-plugin/1.0/my-jenkins-plugin-1.0.hpi" 
+                }
+
+            }
+        },
+         {
+            "description" : "Jenkins >= 2.107",
+            "prerequisites": {
+                "productVersion": "[2.107,)" 
+            },
+            "includePlugins" : {
+                "android-emulator": {
+                    "version" : "3.0" 
+                },
+                "android-signing-plugin":{
+                    "version" : "2.2.5" 
+                },
+                "my-jenkins-plugin": {
+                    "url" : "https://nexus3.beescloud.com/repository/maven-releases/io/jenkins/plugins/my-jenkins-plugin/1.0/my-jenkins-plugin-1.0.hpi" 
+                }
+
+            }
+        }
+
+    ],
+    "settings":{
+        "httpCredentialsProvider": {
+            "credentials":[
+                {
+                    "id": "nexuscredentials",
+                    "authenticationScope": "ANY"
+                }
+            ]
+        }
+    }   
+
+}
+
